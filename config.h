@@ -86,7 +86,7 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("xfce4-terminal") }, 
 	{ MODKEY,                       XK_b, spawn,          SHCMD("waterfox-current") }, 
-	{ MODKEY,                       XK_d, spawn,          SHCMD("discord") }, 
+	{ MODKEY,                       XK_d, spawn,          SHCMD("discord-canary") }, 
 	{ MODKEY|ShiftMask,                       XK_s, spawn,          SHCMD("maim -s -m 10 ~/Pictures/screenshot-$(date '+%Y%m%d_%H%M%S').png") }, 
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_Down,   focusstack,     {.i = +1 } },
