@@ -87,7 +87,7 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_Return, spawn,          SHCMD("xfce4-terminal") }, 
+	{ MODKEY,                       XK_Return, spawn,          SHCMD("st") }, 
 	{ MODKEY,                       XK_b, spawn,          SHCMD("waterfox-current") }, 
 	{ MODKEY,                       XK_d, spawn,          SHCMD("discord-canary") }, 
 	{ MODKEY,                       XK_r, spawn,          SHCMD("ranger") }, 
