@@ -12,7 +12,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 12;       /* vertical padding of bar */
 static const int sidepad            = 12;       /* horizontal padding of bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=10" };
+static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
 static const char norm_fg[] = "#9191cb";
 static const char norm_bg[] = "#0c0923";
 static const char norm_border[] = "#65658e";
@@ -88,8 +88,8 @@ static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          SHCMD("st") }, 
-	{ MODKEY,                       XK_b, spawn,          SHCMD("waterfox-current") }, 
-	{ MODKEY,                       XK_d, spawn,          SHCMD("discord-canary") }, 
+	{ MODKEY,                       XK_b, spawn,          SHCMD("firefox") }, 
+	{ MODKEY,                       XK_d, spawn,          SHCMD("discord") }, 
 	{ MODKEY,                       XK_r, spawn,          SHCMD("ranger") }, 
 	{ 0,                       XK_Print, spawn,          SHCMD("sh ~/Scripts/screenshot") }, 
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
