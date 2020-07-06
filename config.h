@@ -3,15 +3,15 @@
 /* appearance */
 static const unsigned int borderpx  = 2;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 8;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 8;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 8;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 8;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 4;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 4;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 4;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 4;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const int vertpad            = 8;       /* vertical padding of bar */
-static const int sidepad            = 8;       /* horizontal padding of bar */
+static const int vertpad            = 4;       /* vertical padding of bar */
+static const int sidepad            = 4;       /* horizontal padding of bar */
 static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
 static const char norm_fg[] = "#9191cb";
 static const char norm_bg[] = "#0c0923";
@@ -87,8 +87,9 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_s, spawn,          SHCMD("st") }, 
-	{ MODKEY,                       XK_r, spawn,          SHCMD("ranger") }, 
+	{ MODKEY,                       XK_t, spawn,          SHCMD("st") }, 
+	{ MODKEY,                       XK_r, spawn,          SHCMD("vifm") }, 
+	{ MODKEY,                       XK_a, spawn,          SHCMD("pulsemixer") }, 
 	{ 0,                       XK_Print, spawn,          SHCMD("sh ~/Scripts/screenshot") }, 
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
 	{ MODKEY,                       XK_k,   focusstack,     {.i = +1 } },
