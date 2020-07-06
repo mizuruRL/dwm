@@ -51,23 +51,24 @@ static const int resizehints = 0;    /* 1 means respect size hints in tiled resi
 #include "vanitygaps.c"
 
 static const Layout layouts[] = {
-	/* symbol     arrange function */
-	{ "",      tile },    /* first entry is default */
-	{ "",      monocle },
-//	{ "",      spiral },
-//	{ "",     dwindle },
-	{ "",      deck },
-	{ "",      bstack },
-//	{ "",      bstackhoriz },
-	{ "",      grid },
-//	{ "",      nrowgrid },
-//	{ "",      horizgrid },
-//	{ "",      gaplessgrid },
-	{ "",      centeredmaster },
-//	{ "",      centeredfloatingmaster },
-	{ "",      NULL },    /* no layout function means floating behavior */
-	{ NULL,       NULL },
+        /* symbol     arrange function */
+        { "[]=",      tile },    /* first entry is default */
+        { "[M]",      monocle },
+        { "[@]",      spiral },
+        { "[\\]",     dwindle },
+        { "H[]",      deck },
+        { "TTT",      bstack },
+        { "===",      bstackhoriz },
+        { "HHH",      grid },
+        { "###",      nrowgrid },
+        { "---",      horizgrid },
+        { ":::",      gaplessgrid },
+        { "|M|",      centeredmaster },
+        { ">M>",      centeredfloatingmaster },
+        { "><>",      NULL },    /* no layout function means floating behavior */
+        { NULL,       NULL },
 };
+
 
 /* key definitions */
 #define MODKEY Mod4Mask
@@ -87,13 +88,14 @@ static const char *dmenucmd[] = { "dmenu_run", NULL };
 static Key keys[] = {
 	/* modifier                     key        function        argument */
 	{ MODKEY|ShiftMask,             XK_d,      spawn,          {.v = dmenucmd } },
-	{ MODKEY,                       XK_t, spawn,          SHCMD("st") }, 
-	{ MODKEY,                       XK_r, spawn,          SHCMD("vifm") }, 
-	{ MODKEY,                       XK_a, spawn,          SHCMD("pulsemixer") }, 
-	{ 0,                       XK_Print, spawn,          SHCMD("sh ~/Scripts/screenshot") }, 
+	{ MODKEY,                       XK_t,      spawn,          SHCMD("st") }, 
+	{ MODKEY,                       XK_r,      spawn,          SHCMD("st -e vifm") }, 
+	{ MODKEY,                       XK_a,      spawn,          SHCMD("st -e pulsemixer") }, 
+	{ MODKEY,                       XK_b,      spawn,          SHCMD("chromium") }, 
+	{ 0,                            XK_Print,  spawn,          SHCMD("sh ~/Scripts/screenshot") }, 
 	{ MODKEY|ShiftMask,             XK_b,      togglebar,      {0} },
-	{ MODKEY,                       XK_k,   focusstack,     {.i = +1 } },
-	{ MODKEY,                       XK_j,     focusstack,     {.i = -1 } },
+	{ MODKEY,                       XK_k,      focusstack,     {.i = +1 } },
+	{ MODKEY,                       XK_j,      focusstack,     {.i = -1 } },
 //	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
 //	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
@@ -125,9 +127,10 @@ static Key keys[] = {
 	{ Mod1Mask,                     XK_6,      setlayout,      {.v = &layouts[4]} },
 	{ Mod1Mask,                     XK_7,      setlayout,      {.v = &layouts[6]} },
 //	{ MODKEY,                       XK_space,  setlayout,      {0} },
-	{ MODKEY,                       XK_f,  togglefloating, {0} },
+	{ MODKEY,                       XK_f,      togglefloating, {0} },
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
-	{ MODKEY,                       XK_s,      tag,      {.ui = ~0 } },
+	{ MODKEY,                       XK_s,      tag,            {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_s,      toggletag,      {.ui = ~0 } },
 //	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 //	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 //	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
