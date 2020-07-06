@@ -12,7 +12,7 @@ static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
 static const int vertpad            = 4;       /* vertical padding of bar */
 static const int sidepad            = 4;       /* horizontal padding of bar */
-static const char *fonts[]          = { "JetBrains Mono Nerd Font:size=12" };
+static const char *fonts[]          = { "JetBrainsMono Nerd Font:size=12" };
 static const char norm_fg[] = "#9191cb";
 static const char norm_bg[] = "#0c0923";
 static const char norm_border[] = "#65658e";
